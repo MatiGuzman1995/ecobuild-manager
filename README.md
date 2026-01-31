@@ -15,7 +15,7 @@ Electron • Node.js • MySQL • Chart.js
 2) npm start
 
 ## Base de datos
-- Script de creación: /sql/init.sql (pendiente / o agregarlo)
+- Script de creación: /sql/init.sql (pendiente)
 
 ## Capturas
 (agregá screenshots)
