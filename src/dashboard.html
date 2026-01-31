@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBuildManager - Panel Principal</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- Íconos -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+ 
+  <!-- Barra lateral -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logos/terrac.png" alt="Logo Terra C">
+      <h2>EcoBuildManager</h2>
+    </div>
+
+<ul class="menu">
+  <li class="active" data-section="inicio"><i class="fas fa-home"></i> Inicio</li>
+  <li data-section="proyectos"><i class="fas fa-folder"></i> Proyectos</li>
+  <li data-section="clientes"><i class="fas fa-users"></i> Clientes</li>
+  <li data-section="calendario"><i class="fas fa-calendar"></i> Calendario</li>
+  <li data-section="presupuesto"><i class="fas fa-calculator"></i> Presupuesto</li>
+  <li data-section="materiales"><i class="fas fa-boxes"></i> Materiales</li>
+  <li data-section="progreso"><i class="fas fa-chart-line"></i> Progreso</li>
+  <li data-section="mensajes"><i class="fas fa-envelope"></i> Mensajes</li>
+  <li data-section="usuarios"><i class="fas fa-user-shield"></i> Usuarios</li>
+  <li data-section="configuracion"><i class="fas fa-cog"></i> Configuración</li>
+</ul>
+
+
+
+   
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <div class="topbar">
+  <div class="user-menu">
+    <span id="userInfo" class="user-label"></span>
+    <i class="fas fa-chevron-down" id="userDropdownBtn"></i>
+
+    <div id="userDropdown" class="dropdown oculto">
+      <div class="dropdown-item" id="btnMiPerfil"><i class="fas fa-user"></i> Mi Perfil</div>
+      <div class="dropdown-item admin-only" id="btnConfig"><i class="fas fa-cog"></i> Configuración</div>
+      <div class="dropdown-item" id="btnLogout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</div>
+    </div>
+  </div>
+</div>
+
+    <header>
+      <h1 id="titulo-seccion">Inicio</h1>
+    </header>
+
+    <!-- Contenedor dinámico -->
+    <section id="contenido" class="dashboard-wrapper">
+
+  <!-- Header Welcome -->
+  <div class="dash-header">
+    <h2>Bienvenido 🌿</h2>
+    <p>Resumen general de la actividad del sistema</p>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+
+    <div class="kpi-card">
+      <i class="fa-solid fa-building"></i>
+      <div>
+        <h4>Proyectos Activos</h4>
+        <p id="kpi-proyectos">--</p>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <i class="fa-solid fa-user-group"></i>
+      <div>
+        <h4>Clientes</h4>
+        <p id="kpi-clientes">--</p>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+      <div>
+        <h4>Presupuestos</h4>
+        <p id="kpi-presupuestos">--</p>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <i class="fa-solid fa-check-circle"></i>
+      <div>
+        <h4>Avance Promedio</h4>
+        <p id="kpi-avance">--%</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Charts & Activity -->
+  <div class="dash-main-layout">
+
+    <!-- Gráfico principal -->
+    <div class="dash-chart">
+      <canvas id="chartProyectosEstado"></canvas>
+    </div>
+
+    <!-- Panel lateral -->
+    <div class="side-panel">
+      <h3>Actividad Reciente</h3>
+      <ul id="actividad-reciente">
+        <li>📁 Proyecto “Casa Los Aromos” actualizado</li>
+        <li>💬 Nuevo mensaje de cliente</li>
+        <li>🧱 Material agregado al inventario</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+  </main>
+
+  <!-- Script principal -->
+<script src="libs/chart.umd.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- MODAL MATERIAL -->
+<div id="modalMaterial" class="modal-material oculto">
+  <div class="modal-material-content">
+    
+    <button class="modal-close-btn" id="btnCerrarX">✖</button> 
+
+    <h3 id="modalTitulo">Nuevo Material</h3>
+
+    <label>Nombre *</label>
+    <input id="matNombre" required>
+
+    <label>Descripción *</label>
+    <textarea id="matDesc" maxlength="120" style="resize: none; height: 70px;"></textarea>
+    <small id="charCount" style="font-size:12px;color:#555;">0/120</small>
+
+    <div class="form-grid-2">
+      <div>
+        <label>Unidad *</label>
+        <input id="matUnidad" placeholder="kg / m2 / bolsa / unidad" required>
+      </div>
+      <div>
+        <label>Precio Unitario *</label>
+        <input id="matPrecio" type="number" min="0" step="0.01" required>
+      </div>
+    </div>
+
+    <label>Tipo *</label>
+    <input id="matTipo" required>
+
+    <div class="modal-actions">
+      <button id="btnCerrarModal" class="btn-secondary">Cancelar</button>
+      <button id="btnGuardarMat" class="btn-primary">Guardar</button>
+    </div>
+
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="./vendor/pdfmake/pdfmake.min.js"></script>
+<script src="./vendor/pdfmake/vfs_fonts.js"></script>
+
+
+</body>
+</html>

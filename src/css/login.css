@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #b5e2fa, #d7f2d3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-card {
+  background-color: #ffffffdd;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 320px;
+  animation: fadeIn 1s ease;
+}
+
+.login-card h1 {
+  color: #2e7d32;
+  margin-bottom: 5px;
+  font-size: 1.8em;
+}
+
+.subtitle {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+#mensaje {
+  margin-top: 15px;
+  color: red;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #b5e2fa, #d7f2d3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-card {
+  background-color: #ffffffee;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 340px;
+  animation: fadeIn 1s ease;
+}
+
+.logo-eco {
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #2e7d32;
+  margin: 5px 0;
+  font-size: 1.6em;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+#mensaje {
+  margin-top: 15px;
+  color: red;
+}
+
+/* --- sección "Desarrollado por Terra C" --- */
+.powered-by {
+  margin-top: 25px;
+  color: #666;
+  font-size: 0.85em;
+}
+
+.powered-by p {
+  margin: 0 0 5px;
+}
+
+.logo-terra {
+  width: 100px;
+  opacity: 0.9;
+}
+
+/* animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

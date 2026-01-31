@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBuildManager - Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <!-- LOGO PRINCIPAL -->
+      <img src="assets/logos/eco.png" alt="EcoBuildManager" class="logo-eco" />
+
+      <h1>EcoBuildManager</h1>
+      <p class="subtitle">Gestión de proyectos ecológicos</p>
+
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuario" required />
+        <input type="password" id="password" placeholder="Contraseña" required />
+        <button type="submit">Iniciar sesión</button>
+      </form>
+
+      <p id="mensaje"></p>
+
+      <!-- LOGO DE TERRA C -->
+      <div class="powered-by">
+        <p>Desarrollado por</p>
+        <img src="assets/logos/terrac.png" alt="Terra C" class="logo-terra" />
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+
+
+  <script>
+  console.log("✅ index.html cargado correctamente");
+</script>
+<script src="./vendor/pdfmake/pdfmake.min.js"></script>
+<script src="./vendor/pdfmake/vfs_fonts.js"></script>
+
+</body>
+</html>
